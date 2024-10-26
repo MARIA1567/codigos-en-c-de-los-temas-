@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    double e,f,q,n ;
+    cout<<"para encontrae fuerza ingrese 1 \n para encontrar campo electrico 2 \n para encontrar la carga 3 \n";
+    cout<<"escoge el ejercicio:\n";
+    cin>>n;
+    if (n==1)
+    {
+        cout<<"ingrese el valor de el campo electrico: \n";
+        cin>>e;
+        cout<<"ingrese el valor de la carga: \n";
+        cin>>q;
+        f=e*q;
+        cout<<"la fuerza es:"<<f<<" Newtons";
+    }
+    else if(n==2)
+    {
+        cout<<"ingrese el valor de la fuerza: \n";
+        cin>>f;
+        cout<<"ingrese el valor de la carga electrica: \n";
+        cin>>q;
+        e=f/q;
+        cout<<"el campo electrico es:"<<e<<" Newton/coulumb";
+    }
+    else if(n==3)
+    {
+        cout<<"ingrese el valor de la fuerza: \n";
+        cin>>f;
+        cout<<"ingrese el valor del campo electrico: \n";
+        cin>>e;
+        q=f/e;
+        cout<<"la carga es:"<<q<<" ohmnios";
+    }
+    else
+    {
+        cout<<"que quieres resolver yo no saber";
+    }
+    return 0;
+}
