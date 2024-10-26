@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    float v,i,r,n ;
+    cout<<"para encontrae Voltaje ingrese 1 \n para encontrar intensidad 2 \n para encontrar Resistencia 3 \n";
+    cout<<"escoge el ejercicio:\n";
+    cin>>n;
+    if (n==1)
+    {
+        cout<<"ingrese el valor de la intensidad de corriente: \n";
+        cin>>i;
+        cout<<"ingrese el valor de la resistencia: \n";
+        cin>>r;
+        v=i*r;
+        cout<<"el voltaje es:"<<v<<" Voltios";
+    }
+    else if(n==2)
+    {
+        cout<<"ingrese el valor del Voltaje: \n";
+        cin>>v;
+        cout<<"ingrese el valor de la resistencia: \n";
+        cin>>r;
+        i=v/r;
+        cout<<"la intensidad es:"<<i<<" Amperios";
+    }
+    else if(n==3)
+    {
+        cout<<"ingrese el valor de el Voltaje: \n";
+        cin>>v;
+        cout<<"ingrese el valor de la Intensidad: \n";
+        cin>>i;
+        r=v/i;
+        cout<<"la resistencia es:"<<r<<" ohmnios";
+    }
+    else
+    {
+        cout<<"que quieres resolver yo no saber";
+    }
+    return 0;
+}
