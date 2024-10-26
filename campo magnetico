@@ -1,0 +1,22 @@
+#include<iostream>
+const double k = 9*10^9;
+double campo_electrico(double carga,double distancia) {
+return k * carga / (distancia * distancia)/100;
+}
+double fuerza_magnetica(double carga1, double carga2, double distancia) {
+double E = campo_electrico(carga2, distancia);
+return carga1 * E;
+}
+int main() {
+std::cout << "Cálculo de la fuerza entre dos cargas en un campo eléctrico:\n";
+double carga1, carga2, distancia;
+std::cout << "Ingresa la carga 1 (q1) en Coulombs: ";
+std::cin >> carga1;
+std::cout << "Ingresa la carga 2 (q2) en Coulombs: ";
+std::cin >> carga2;
+std::cout << "Ingresa la distancia entre las cargas (r) en metros: ";
+std::cin >> distancia;
+double fuerza = fuerza_magnetica(carga1, carga2, distancia);
+std::cout << "La fuerza entre las dos cargas es: " << fuerza << " N" << std::endl;
+return 0;
+}
