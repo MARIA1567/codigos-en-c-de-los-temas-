@@ -1,0 +1,60 @@
+#include <iostream>
+class ConversionUnidades {
+private:
+    double valor;
+public:
+    ConversionUnidades(double valor) : valor(valor) {}
+    double kmAMetros() { return valor * 1000; }
+    double metrosACentimetros() { return valor * 100; }
+    double centimetrosAMilimetros() { return valor * 10; }
+    double millasAMetros() { return valor * 1609.34; }
+    double kilogramosAGramos() { return valor * 1000; }
+    double gramosAMiligramos() { return valor * 1000; }
+    double librasAKilogramos() { return valor / 2.20462; }
+    double segundosAMilisegundos() { return valor * 1000; }
+    double minutosASegundos() { return valor * 60; }
+    double horasASegundos() { return valor * 3600; }
+};
+void menu() {
+    std::cout << "Menú de Conversión de Unidades" << std::endl;
+    std::cout << "1. Longitud" << std::endl;
+    std::cout << "2. Masa" << std::endl;
+    std::cout << "3. Tiempo" << std::endl;
+    std::cout << "4. Salir" << std::endl;
+}
+int main() {
+    double valor;
+    int opcion;
+    do {
+        menu();
+        std::cout << "Ingrese la opción deseada: ";
+        std::cin >> opcion;
+        if (opcion != 4) {
+            std::cout << "Ingrese el valor a convertir: ";
+            std::cin >> valor;
+            ConversionUnidades conversion(valor);
+            switch (opcion) {
+                case 1:
+                    std::cout << "Longitud" << std::endl;
+                    std::cout << "km a metros: " << conversion.kmAMetros() << std::endl;
+                    std::cout << "metros a centimetros: " << conversion.metrosACentimetros() << std::endl;
+                    std::cout << "centimetros a milimetros: " << conversion.centimetrosAMilimetros() << std::endl;
+                    std::cout << "millas a metros: " << conversion.millasAMetros() << std::endl;
+                    break;
+                case 2:
+                    std::cout << "Masa" << std::endl;
+                    std::cout << "kilogramos a gramos: " << conversion.kilogramosAGramos() << std::endl;
+                    std::cout << "gramos a miligramos: " << conversion.gramosAMiligramos() << std::endl;
+                    std::cout << "libras a kilogramos: " << conversion.librasAKilogramos() << std::endl;
+                    break;
+                case 3:
+                    std::cout << "Tiempo" << std::endl;
+                    std::cout << "segundos a milisegundos: " << conversion.segundosAMilisegundos() << std::endl;
+                    std::cout << "minutos a segundos: " << conversion.minutosASegundos() << std::endl;
+                    std::cout << "horas a segundos: " << conversion.horasASegundos() << std::endl;
+                    break;
+            }
+        }
+    } while (opcion != 4);
+    return 0;
+}
